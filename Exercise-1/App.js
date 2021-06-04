@@ -1,4 +1,4 @@
-const scnd_file = require("./scnd_file.js");
+const scnd_file = require("./scnd_app.js");
 
 console.log("Welcome!");
 
