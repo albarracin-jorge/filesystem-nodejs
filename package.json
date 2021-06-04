@@ -18,6 +18,7 @@
   "homepage": "https://github.com/albarracin-jorge/filesystem-nodejs#readme",
   "dependencies": {
     "lodash": "^4.17.21",
+    "request": "^2.88.2",
     "yargs": "^17.0.1"
   }
 }

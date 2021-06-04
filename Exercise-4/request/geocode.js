@@ -2,7 +2,7 @@ const request = require('request');
 const argv = require('yargs').argv;
 
 let address = argv.address;
-let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyCleHvmQ37T_XevLLx7ijQtcZbk7e4hhPc`;
+let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=`;//Insert API Key here
 
 request({
   url: url,
