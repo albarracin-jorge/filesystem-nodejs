@@ -1,7 +1,8 @@
 const fs = require('fs');
 let first_chain = [];
-let main_data;
+let main_data = [];
 let data_arr = [];
+var data;
 
 module.exports = {
   create: async ()=>{
@@ -21,17 +22,14 @@ module.exports = {
     fs.readFile('./data.json', 'utf-8', (err, data)=>{
       if(err) throw err;
       main_data = JSON.parse(data)
-      return main_data;
+      console.log(main_data);
+      for(data in main_data){
+        data_arr.push([data, main_data[data]])
+      }
+      data_arr.sort((a, b)=>{
+        return a[1] - b[1];
+      });
+      console.log(data_arr);
     })
-  },
-  sort: ()=>{
-    
-    for(var data in main_data){
-      data_arr.push([data, main_data[data]])
-    }
-    data_arr.sort((a, b)=>{
-      return a[1] - b[1];
-    });
-    console.log(data_arr);
   }
 }
