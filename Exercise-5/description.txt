@@ -1,0 +1,1 @@
+Pequeña idea usando file system: crear un archivo en formato json, guardar un arreglo de numeros generados al azar, leer el archivo y reescribirlo con los numeros ordenados de forma ascendente

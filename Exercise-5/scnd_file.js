@@ -1,45 +1,37 @@
 const fs = require('fs');
 let first_chain = [];
 let main_data;
+let data_arr = [];
 
 module.exports = {
-  create: ()=>{
+  create: async ()=>{
     //creating array whit random numbers
     for(let i=0; i<100; i++){
       let num = `"${i}": ${Math.floor(Math.random() * (200 - 0)) + 0}`;
       first_chain[i] = num;
     }    
   },
-  save: ()=>{
+  save: async ()=>{
     fs.appendFile('./data.json', `{${first_chain}}`, (err)=>{
       if(err) throw err
         console.log("Creación exitosa!")
     })
   },
-  read: ()=>{
+  read: async ()=>{
     fs.readFile('./data.json', 'utf-8', (err, data)=>{
       if(err) throw err;
       main_data = JSON.parse(data)
-      console.log(main_data)
-
-      for(i=0; i<1000; i++){
-        if(main_data[i] > main_data[i+1]){
-          let flag = main_data[i];
-          main_data[i] = main_data[i+1];
-          main_data[i+1] = flag;
-        }
-      }
-      console.log("fila ordenada: ");
-      console.log(main_data)
+      return main_data;
     })
   },
-  order: ()=>{
-    for(i=0; i<1000; i++){
-      if(main_data[i]>main_data[i+1]){
-        flag = main_data[i+1];
-        main_data[i+1] = main_data[i];
-        main_data[i] = flag;
-      }
+  sort: ()=>{
+    
+    for(var data in main_data){
+      data_arr.push([data, main_data[data]])
     }
+    data_arr.sort((a, b)=>{
+      return a[1] - b[1];
+    });
+    console.log(data_arr);
   }
 }

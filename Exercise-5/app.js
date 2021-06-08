@@ -1,14 +1,15 @@
 const scnd_file = require('./scnd_file.js')
 
 //creating array whit random numbers
-scnd_file.create();
+// scnd_file.create();
 
 //creating json file
-scnd_file.save();
+// scnd_file.save();
 
 //read json file
 scnd_file.read();
+console.log(scnd_file.main_data);
 
-//read json file in order for min to max number
-// scnd_file.order();
+//sort json file
+scnd_file.sort();
 
