@@ -22,14 +22,14 @@ module.exports = {
     fs.readFile('./data.json', 'utf-8', (err, data)=>{
       if(err) throw err;
       main_data = JSON.parse(data)
-      console.log(main_data);
-      for(data in main_data){
+      console.log(main_data);//Show array (object)
+      for(data in main_data){//Put object into array
         data_arr.push([data, main_data[data]])
       }
-      data_arr.sort((a, b)=>{
+      data_arr.sort((a, b)=>{//sort array
         return a[1] - b[1];
       });
-      console.log(data_arr);
+      console.log(data_arr);//show array sorted
     })
   }
 }
