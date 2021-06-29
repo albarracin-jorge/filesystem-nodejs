@@ -1,6 +1,5 @@
-const express = require('express')
-
-const app = express()
+var express = require('express')
+var app = express()
 
 //middleware
 let isLogin = ()=> true
@@ -11,7 +10,7 @@ let logger = (request, response, next)=> {
 }
 
 let showIP = (request, response, next)=> {
-  console.log('IP: 190.0.0.1.18');
+  console.log('IP: 127.0.0.1');
   next();
 }
 

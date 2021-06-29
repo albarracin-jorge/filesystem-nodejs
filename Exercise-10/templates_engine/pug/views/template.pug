@@ -1,0 +1,14 @@
+html  
+  head
+    title= titulo
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', rel='stylesheet')
+  body
+    div.container
+      h1=message 
+      
+      table.table.table-striped 
+        for person in persons
+          tr 
+            td=person.id 
+            td 
+              a(href='/persona/'+person.id) #{person._name}
